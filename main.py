@@ -12,6 +12,23 @@ def deljenje(a, b):
         return a / b
     except ZeroDivisionError:
         return "Deljenje z 0 je nemogoče."
+    
+zgodovina = []
+
+def dodaj_v_zgodovino(zgodovina, zapis):
+    zgodovina.append(zapis)
+
+    if len(zgodovina) > 3:
+        zgodovina.pop(0)
+
+def izpisi_zgodovino(zgodovina):
+    print("Zadnji izračuni:")
+
+    if len(zgodovina) == 0:
+        print("Ni še izračunov.")
+    else:
+        for z in zgodovina:
+            print(z)
 
 while True:
     
@@ -27,21 +44,45 @@ while True:
     if izbira == "1":
         x = float(input("Prvo število: "))
         y = float(input("Drugo število: "))
-        print(f"Rezultat: {sestej(x, y)}")
+        rez = sestej(x, y)
+        print(f"Rezultat: {rez}")
+
+        zapis = f"{x} + {y} = {rez}"
+        dodaj_v_zgodovino(zgodovina, zapis)
+
+        izpisi_zgodovino(zgodovina)
     elif izbira == "2":
         x = float(input("Prvo število: "))
         y = float(input("Drugo število: "))
-        print(f"Rezultat: {odstej(x, y)}")
+        rez = odstej(x, y)
+        print(f"Rezultat: {rez}")
+
+        zapis = f"{x} - {y} = {rez}"
+        dodaj_v_zgodovino(zgodovina, zapis)
+
+        izpisi_zgodovino(zgodovina)
 
     elif izbira == "3":
         x = float(input("Prvo število: "))
         y = float(input("Drugo število: "))
-        print(f"Rezultat: {pomnozi(x, y)}")
+        rez = pomnozi(x, y)
+        print(f"Rezultat: {rez}")
+
+        zapis = f"{x} * {y} = {rez}"
+        dodaj_v_zgodovino(zgodovina, zapis)
+
+        izpisi_zgodovino(zgodovina)
 
     elif izbira == "4":
         x = float(input("Prvo število: "))
         y = float(input("Drugo število: "))
-        print(f"Rezultat: {deljenje(x, y)}")
+        rez = deljenje(x, y)
+        print(f"Rezultat: {rez}")
+
+        zapis = f"{x} / {y} = {rez}"
+        dodaj_v_zgodovino(zgodovina, zapis)
+
+        izpisi_zgodovino(zgodovina)
 
     elif izbira == "0":
         break
