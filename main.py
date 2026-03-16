@@ -13,32 +13,38 @@ def deljenje(a, b):
     except ZeroDivisionError:
         return "Deljenje z 0 je nemogoče."
     
-print("Pozdrav! Mini kalkulator")
-print("1 = seštevanje")
-print("2 = odštevanje")
-print("3 = množenje")
-print("4 = deljenje")
+while True:
+    
+    print("Pozdrav! Mini kalkulator")
+    print("0 = izhod")
+    print("1 = seštevanje")
+    print("2 = odštevanje")
+    print("3 = množenje")
+    print("4 = deljenje")
 
-izbira = input("Kaj želiš narediti? (1 ali 2): ")
+    izbira = input("Kaj želiš narediti? (1 ali 2): ")
 
-if izbira == "1":
-    x = float(input("Prvo število: "))
-    y = float(input("Drugo število: "))
-    print(f"Rezultat: {sestej(x, y)}")
-elif izbira == "2":
-    x = float(input("Prvo število: "))
-    y = float(input("Drugo število: "))
-    print(f"Rezultat: {odstej(x, y)}")
+    if izbira == "1":
+        x = float(input("Prvo število: "))
+        y = float(input("Drugo število: "))
+        print(f"Rezultat: {sestej(x, y)}")
+    elif izbira == "2":
+        x = float(input("Prvo število: "))
+        y = float(input("Drugo število: "))
+        print(f"Rezultat: {odstej(x, y)}")
 
-elif izbira == "3":
-    x = float(input("Prvo število: "))
-    y = float(input("Drugo število: "))
-    print(f"Rezultat: {pomnozi(x, y)}")
+    elif izbira == "3":
+        x = float(input("Prvo število: "))
+        y = float(input("Drugo število: "))
+        print(f"Rezultat: {pomnozi(x, y)}")
 
-elif izbira == "4":
-    x = float(input("Prvo število: "))
-    y = float(input("Drugo število: "))
-    print(f"Rezultat: {deljenje(x, y)}")
+    elif izbira == "4":
+        x = float(input("Prvo število: "))
+        y = float(input("Drugo število: "))
+        print(f"Rezultat: {deljenje(x, y)}")
 
-else:
-    print("Neveljavna izbira!")
+    elif izbira == "0":
+        break
+
+    else:
+        print("Neveljavna izbira!")
