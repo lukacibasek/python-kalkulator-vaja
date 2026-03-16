@@ -12,7 +12,7 @@ def deljenje(a, b):
         return a / b
     except ZeroDivisionError:
         return "Deljenje z 0 je nemogoče."
-    
+
 while True:
     
     print("Pozdrav! Mini kalkulator")
