@@ -1,0 +1,1 @@
+Čisto preprost mini kalkulator z osnovnimi funkcijami.
